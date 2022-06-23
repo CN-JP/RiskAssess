@@ -9,14 +9,25 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 10%;
+  margin-right: 8px;
+  margin-top: 5%;
+}
+
 .title-header {
   text-align: center;
+}
+
+.title-text-cont {
+  padding: 30px 0;
 }
 
 h1 {
   font-weight: bold;
   font-size: 34px;
-  padding: 30px 0;
 }
 
 .box {
@@ -77,7 +88,7 @@ h1 {
   color: #FCD900;
 }
 
-.result {
+.result, .recommendation {
   padding: 30px 20px;
   margin-bottom: 15px;
 }
@@ -93,7 +104,7 @@ h1 {
   margin-bottom: 25px;
 }
 
-.result-text {
+.result-text, .recommendation-text {
   font-weight: bold;
 }
 

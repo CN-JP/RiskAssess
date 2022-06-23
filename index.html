@@ -4,18 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RiskRating Calculator</title>
+  <title>RiskAssess | Risk Assessment App</title>
+  <link rel="icon" type="image/x-icon" href="images/RiskAssess-logo.png">
 
-<!-- Google fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Montserrat:wght@100;200;300;400;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Montserrat:wght@100;200;300;400;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/20a5964665.js" crossorigin="anonymous"></script>
 
   <!-- BootstrapCSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 
   <!-- CSS -->
@@ -25,32 +27,88 @@
 
 <body>
   <div class="container-fluid">
-<h1 class="title-header">Risk Rating Calculator</h1>
-<div class="box">
-  <div class="content">
-    <div class="row">
-      <div class="col-lg-12">
+    <div class="title-header">
+      <img src="images/RiskAssess-logo.png" class="logo" alt="logo">
+<div class="title-text-cont">
+  <h1>RiskAssess</h1>
+  <h5>Risk Assessment App</h5>
+</div>
+    </div>
+
+    <div class="box">
+      <div class="content">
+        <div class="row">
+          <div class="col-lg-12">
             <div class="input">
               <label for="risk-event">Risk Event</label>
-              <textarea class="risk-event" rows="5" cols="80" type="text" id="risk-event"></textarea>
+              <textarea class="risk-event" rows="5" cols="80" type="text" id="risk-event" placeholder="Provide clear details of the risk event in this box"></textarea>
             </div>
-            </div>
-              </div>
-            <div class="row">
-            <div class="col-lg-12">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
             <div class="input">
               <label for="risk-category">Risk Category</label>
-              <select name="risk-category" id="risk-category">
+              <select name="risk-category-options" id="risk-category">
+                <option disabled="" selected="">Select one</option>
                 <option value="">Operation Risk</option>
                 <option value="">Credit Risk</option>
                 <option value="">Market Risk</option>
                 <option value="">Cyber Risk</option>
               </select>
             </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="input">
+              <label for="risk-category">Basel Risk Event Type</label>
+              <select name="risk-category-options" id="risk-category">
+                <option disabled="" selected="">Select one</option>
+                <option value="">Internal fraud</option>
+                <option value="">External fraud</option>
+                <option value="">Employment practices and workplace safety</option>
+                <option value="">Clients, products, & business practice</option>
+                <option value="">Damage to physical assets</option>
+                <option value="">Business disruption and systems failures</option>
+                <option value="">Execution, delivery, & process management</option>
+              </select>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+
+            <div class="input">
+              <label for="probability">Probability / Likelihood of Occurence</label>
+              <select name="risk-category-options" id="probability">
+          <option disabled="" selected="">Select one</option>
+                <option value="5">Almost certain</option>
+                <option value="4">Likely</option>
+                <option value="3">Possible</option>
+                <option value="2">Unlikely</option>
+                <option value="1">Rare</option>
+              </select>
             </div>
 
-            <div class="row">
+          </div>
+          <div class="col-lg-6">
+
+            <div class="input">
+              <label for="impact">Impact / Severity</label>
+              <select name="risk-category-options" id="impact">
+<option disabled="" selected="">Select one</option>
+                <option value="5">Catastrophic</option>
+                <option value="4">Major</option>
+                <option value="3">Moderate</option>
+                <option value="2">Minor</option>
+                <option value="1">Negligible</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- <div class="row">
               <div class="col-lg-6">
                 <div class="input">
                   <label for="probability">Probability / Likelihood of Occurence</label>
@@ -63,22 +121,35 @@
                   <input type="number" id="impact">
                 </div>
               </div>
-            </div>
-            <div class="calc">
-              <button class="calculate-btn" id="calculate">Calculate Risk Rating</button>
-            </div>
-          </div>
+            </div> -->
 
-          <div class="result">
-            <p class="result-text">The Risk Rating for the identified risk is
-            <span id="result">
-              00
-            </span>
-            </p>
-            <p class="comment result-text"></p>
-          </div>
+        <div class="calc">
+          <button class="calculate-btn" id="calculate">Calculate Risk Rating</button>
         </div>
       </div>
+
+<!-- Result narrative -->
+      <div class="result">
+        <p class="result-text">The Risk Rating for the identified risk is
+          <span id="result">
+            00
+          </span>
+        </p>
+        <p class="comment result-text"></p>
+      </div>
+
+<!-- Recommendation narrative -->
+<div class="recommendation">
+  <!-- <p class="recommendation-text">The identified risk should be
+    <span id="recommendation">
+      ""
+    </span>
+  </p> -->
+  <p class="recommendation-text"></p>
+</div>
+
+    </div>
+  </div>
 
 
 
